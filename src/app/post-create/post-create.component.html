@@ -1,0 +1,30 @@
+<style>
+    .post {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    input{
+        margin: 12px;
+    }
+    label{
+        margin-right: 44px;
+    }
+</style>
+<div class="post">
+    <input type="number" [placeholder]="placeholder" #inputValue [value]="firstInput" >
+    <div>
+        <label for="Operator">select opration</label>
+        <select name="Operator" id="operator" [(ngModel)]="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </div>
+
+    <input type="number" [placeholder]="placeholder" [(ngModel)]="secondInput">
+    <button (click)="onClick(inputValue)">submit</button>
+    <p>{{firstInput}} {{operator}} {{secondInput}} = {{ans}}</p>
+</div>
